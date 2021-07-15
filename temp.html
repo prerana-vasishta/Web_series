@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="temp.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Series</title>
+  </head>
+
+  <body>
+    <div class="container2">
+      <h1>WEB SERIES</h1>
+    </div>
+
+    <div id = 'wrapper'>
+      <div class="container">
+        <form onsubmit=" return false" id = 'formD'>
+          <div class="row">
+            <div class="label1">
+              <label for="title"><b>Title :</b></label>
+            </div>
+            <div class="textfield">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Name of the series"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="label1">
+              <label for="dname"><b>Director :</b></label>
+            </div>
+            <div class="textfield">
+              <input
+                type="text"
+                id="dname"
+                name="dname"
+                placeholder="Name of the director"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="label1">
+              <label for="actors"><b>Stars :</b></label>
+            </div>
+            <div class="textfield">
+              <input
+                type="text"
+                id="stars"
+                name="stars"
+                placeholder="Name of the Cast"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label1">
+              <label for="actors"><b>Streaming on : </b></label>
+            </div>
+            <div class="textfield">
+              <select id="streaming" name="streaming">
+                <option value="netflix">NETFLIX</option>
+                <option value="amazon prime">AMAZON PRIME</option>
+                <option value="hotstar">HOTSTAR</option>
+                <option value="hbo">HBO</option>
+              </select>
+            </div>
+          </div>
+
+          <br />
+          <div class="row">
+            <input id = 'submitBtn' type="submit" value="ADD" />
+          </div>
+        </form>
+      </div>
+
+      <div id="dataContainer"> </div>
+    </div>
+  </body>
+</html>
+<script src="temp.js"></script>

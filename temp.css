@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 10px 10px 10px 0;
+    font-family:monospace;
+    font-size: larger;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #ffffff;
+    font-size: large;
+    font-family: 'Times New Roman', Times, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+   font-family: 'Otomanopee One', sans-serif;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #bdb8b8;
+  }
+  
+  .container {
+    border-radius: 25px;
+    width: 40%;
+    height:500px;
+    background-color: #7ebfeb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-left: 50px;
+    justify-content: space-around
+  }
+
+ 
+  .container2 {
+    border-radius: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #607f94;
+    text-align: center;
+    color:white;
+    margin:25px 0 25px 0;
+  }
+
+  .container2 h1{
+    padding-top:5px;
+  }
+
+  .label1 {
+    width: 35%;
+    font-size: 1rem;
+    margin-top: 6px;
+    margin-left: 20px;
+  }
+  
+  .textfield {
+    width: 70%;
+    margin-top: 6px;
+    margin-left: 60px;
+  }
+  
+  .textfield > input{
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  .textfield > input:focus{
+      outline: none;
+  }
+
+  .textfield select {
+     border-radius: 25px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  #wrapper{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #dataContainer{
+     display: grid;
+     grid-template-columns: 1fr 1fr ;
+     grid-gap:40px;
+     width: 50%;
+     margin:auto;
+   
+  }
+
+  #dataContainer  div{
+    /* outline: 1px solid black; */
+    text-align: center;
+    background-color: #7ebfeb;
+    border-radius: 30px 0px;
+    font-family: 'Otomanopee One', sans-serif;
+  }
