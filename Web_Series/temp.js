@@ -4,6 +4,8 @@ var dataCont = document.getElementById('dataContainer')
 
     var localData = localStorage.getItem('movieData')
 
+    var  intervalId;
+
     displayData();
 
     btn.addEventListener('click',function(){
@@ -13,8 +15,6 @@ var dataCont = document.getElementById('dataContainer')
         let dname = inpData.dname.value;
         let stars = inpData.stars.value;
         let streaming = inpData.streaming.value
-
-        console.log(title)
  
         let movData = {
             title:title,
@@ -49,6 +49,7 @@ var dataCont = document.getElementById('dataContainer')
         }
        
         displayData()
+        inpData.title.innerHTML = null;
     })
     
 
@@ -58,7 +59,6 @@ var dataCont = document.getElementById('dataContainer')
         dataCont.innerHTML = null;
 
         let data = localStorage.getItem('movieData')
-
         console.log(data)
 
         data = JSON.parse(data)
@@ -67,14 +67,54 @@ var dataCont = document.getElementById('dataContainer')
 
         for(let i = data.length-1; i >=0;  i--){
 
-            console.log('in the loop',data.length)
             if(count === 6){ break; }
 
             let div = document.createElement('div');
+            div.setAttribute('id',`dataDiv${i}`);
+           
+
+            let rmBtn = document.createElement('button');
+            rmBtn.innerText = 'Remove'
+            rmBtn.setAttribute('class','removeBtn')
+             rmBtn.setAttribute('id',`btn${i}`);
+
+
+            rmBtn.addEventListener('click',()=> {
+                timer(i)
+
+                setTimeout(()=> {
+                   let id = div.id;
+
+                   console.log(id)
+
+                   let divCurrent = document.getElementById(`${id}`)
+
+                   
+                   clearInterval(intervalId)
+                   dataCont.removeChild(divCurrent)
+                   
+
+
+                },3000)
+            })
+
+            const timer =(i)=>{
+                 let btnId = document.getElementById(`btn${i}`)
+                 let timer = 2;
+                 btnId.innerText = timer;
+
+                 intervalId =  setInterval(()=>{
+                      timer--;
+                     btnId.innerText=timer;
+                  },1000)
+                 
+            }
+
+
 
             let title = document.createElement('p');
             title.innerHTML = ` Title : ${data[i].title}`;
-            title.style.color = 'white'
+            title.style.color = '#fff';
             title.style.fontSize = '1.5rem';
             title.style.marginBottom = '-2px';
             title.style.textDecoration = 'underline'
@@ -88,7 +128,7 @@ var dataCont = document.getElementById('dataContainer')
             let streaming = document.createElement('p')
             streaming.innerText = `Streaming on : ${data[i].streaming}`;
 
-            div.append(title,director,stars,streaming)
+            div.append(title,director,stars,streaming,rmBtn)
 
             dataCont.append(div)
             count++;
@@ -96,3 +136,6 @@ var dataCont = document.getElementById('dataContainer')
 
 
     }
+
+    
+   
